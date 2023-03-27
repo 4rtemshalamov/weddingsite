@@ -1,13 +1,7 @@
 import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from '@next/font/google'
-import styles from '@/styles/Home.module.css'
-import { Box, SimpleGrid, Text } from '@chakra-ui/react'
-import { Canvas } from '@react-three/fiber'
-import Greeting from './Greeting'
-import PlaceAndTime from './PlaceAndTime'
-
-const inter = Inter({ subsets: ['latin'] })
+import { SimpleGrid } from '@chakra-ui/react'
+import Greeting from '../features/greering/Greeting'
+import Schedule from '@/features/schedule/Schedule'
 
 export default function Home() {
   return (
@@ -21,10 +15,7 @@ export default function Home() {
       <main>
         <SimpleGrid columns={1}>
           <Greeting />
-          <PlaceAndTime />
-          <Box bg="blue" height="100vh"></Box>
-          <Box bg="green" height="100vh"></Box>
-          <Box bg="tomato" height="100vh"></Box>
+          <Schedule />
         </SimpleGrid>
       </main>
     </>
