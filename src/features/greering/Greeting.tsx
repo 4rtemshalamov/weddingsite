@@ -1,9 +1,7 @@
 import { Box, Button, ButtonGroup, Flex, Heading, Text } from '@chakra-ui/react'
 import Image from 'next/image'
 import Link from 'next/link'
-import wedding from './../../../public/we.webp'
 import weddingLogo from './../../../public/weddingLogo.png'
-import Count from './Count'
 
 export default function Greeting() {
   return (
