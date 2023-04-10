@@ -1,20 +1,34 @@
-import { Flex, Text } from '@chakra-ui/react'
+import { Flex, Text, Box, WrapItem, Avatar } from '@chakra-ui/react'
+import Link from 'next/link'
 
 export default function Details() {
   return (
-    <Flex alignItems="center" flexDirection="column">
-      <Text textAlign="center" fontSize="3xl">
-        Детали
-      </Text>
-      <Text>
-        Дорогие наши гости! Мы с огромной радостью приглашаем вас на нашу
-        свадьбу и очень ценим ваше присутствие. Однако, мы хотели бы попросить
-        вас не дарить нам цветы, так как они быстро увядают и не оставляют
-        долговременных воспоминаний. Вместо этого, мы будем очень благодарны за
-        любые денежные подарки или ценные подарки, которые помогут нам начать
-        новую жизнь вместе. Но самое главное для нас - ваше присутствие на нашем
-        особенном дне. Спасибо за понимание и с нетерпением ждем вашего приезда!{' '}
-      </Text>
-    </Flex>
+    <Box background="main">
+      <Flex alignItems="center" flexDirection="column" color="mainFont">
+        <Text textAlign="center" fontSize="90px" fontFamily="Orchidea">
+          ДЕТАЛИ
+        </Text>
+        <Text
+          paddingTop="30px"
+          color="font"
+          fontSize="24px"
+          fontFamily="Orchidea"
+        >
+          На все вопросы, связанные с торжеством, с радостью ответит организатор
+          нашей свадьбы - Юлия.
+        </Text>
+        <WrapItem paddingTop="30px" justifyContent="center">
+          <Avatar size="2xl" name="Юлия" src="./../../../public/photo.jpg" />
+        </WrapItem>
+        <Text
+          paddingTop="24px"
+          fontFamily="Orchidea"
+          fontSize="24px"
+          textAlign="center"
+        >
+          <Link href="tel:+79995402963">+7(999)-540-29-63</Link>
+        </Text>
+      </Flex>
+    </Box>
   )
 }

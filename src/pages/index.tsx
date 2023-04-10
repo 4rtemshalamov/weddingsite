@@ -19,9 +19,9 @@ export default function Home() {
         <SimpleGrid columns={1}>
           <Greeting />
           <Schedule />
-          <Invitation />
+          {/* <Invitation /> */}
           <Details />
-          <Contacts />
+          {/* <Contacts /> */}
         </SimpleGrid>
       </main>
     </>
