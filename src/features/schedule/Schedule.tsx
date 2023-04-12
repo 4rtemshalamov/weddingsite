@@ -1,21 +1,16 @@
-import { Box, Button, ButtonGroup, Flex, Text } from '@chakra-ui/react'
-import { css } from '@emotion/react'
-import { Steps, Timeline } from 'antd'
+import { Box, Button, Flex, Text } from '@chakra-ui/react'
+import { ClockCircleOutlined } from '@ant-design/icons'
+import styled from '@emotion/styled'
+import { Timeline } from 'antd'
 import Link from 'next/link'
 
-const style = css`
-  div.timeline_container div.ant-timeline-item-label {
-    width: calc(18% - 12px) !important;
-  }
-
-  div.timeline_container div.ant-timeline-item-content {
-    left: calc(19% - 4px) !important;
-    width: calc(79% - 4px) !important;
-  }
-
-  div.timeline_container div.ant-timeline-item-tail,
-  div.ant-timeline-item-head {
-    left: 19% !important;
+const StyledTimeline = styled(Timeline)`
+  .timeline_container .ant-timeline-item-tail,
+  .ant-timeline-item-head {
+    width: 25px;
+    height: 25px;
+    /* padding-block: 0px; */
+    background: #fffaf0;
   }
 `
 
@@ -33,12 +28,21 @@ export default function Schedule() {
       </Text>
       <Box>
         <Box>
-          <Timeline
+          <StyledTimeline
             mode="alternate"
             items={[
               {
                 children: 'Сбор гостей и фуршет в 16:30',
-                color: '#957e6c',
+                dot: (
+                  <ClockCircleOutlined
+                    style={{
+                      fontSize: '25px',
+                      background: '#957e6c',
+                      color: '#957e6c',
+                      borderRadius: '50%',
+                    }}
+                  />
+                ),
                 style: {
                   fontSize: '24px',
                   color: '#545F55',
@@ -47,16 +51,35 @@ export default function Schedule() {
               },
               {
                 children: 'Церемония в 17:00',
-                color: '#957e6c',
+                dot: (
+                  <ClockCircleOutlined
+                    style={{
+                      fontSize: '25px',
+                      background: '#957e6c',
+                      color: '#957e6c',
+                      borderRadius: '50%',
+                    }}
+                  />
+                ),
                 style: {
                   fontSize: '24px',
                   color: '#545F55',
                   fontFamily: 'Orchidea',
+                  paddingRight: '30px',
                 },
               },
               {
                 children: 'Банкет в 18:00',
-                color: '#957e6c',
+                dot: (
+                  <ClockCircleOutlined
+                    style={{
+                      fontSize: '25px',
+                      background: '#957e6c',
+                      color: '#957e6c',
+                      borderRadius: '50%',
+                    }}
+                  />
+                ),
                 style: {
                   fontSize: '24px',
                   color: '#545F55',
@@ -65,7 +88,16 @@ export default function Schedule() {
               },
               {
                 children: 'Вечеринка с 22:00 до 00:00',
-                color: '#957e6c',
+                dot: (
+                  <ClockCircleOutlined
+                    style={{
+                      fontSize: '25px',
+                      background: '#957e6c',
+                      color: '#957e6c',
+                      borderRadius: '50%',
+                    }}
+                  />
+                ),
                 style: {
                   fontSize: '24px',
                   color: '#545F55',
