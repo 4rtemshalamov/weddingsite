@@ -20,10 +20,8 @@ export default function Home() {
         <SimpleGrid columns={1}>
           <Greeting />
           <Schedule />
-          {/* <Invitation /> */}
-          <Details />
           <Gifts />
-          {/* <Contacts /> */}
+          <Details />
         </SimpleGrid>
       </main>
     </>

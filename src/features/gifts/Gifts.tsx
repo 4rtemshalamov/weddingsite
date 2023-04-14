@@ -1,10 +1,17 @@
+import useDeviceDetect from '@/hooks/useDeviceDetect'
 import { Box, Flex, Text } from '@chakra-ui/react'
 
 export default function Gifts() {
+  const { isMobile } = useDeviceDetect()
+
   return (
-    <Box background="main">
+    <Box background="main" marginTop={isMobile ? '50px' : '100px'}>
       <Flex alignItems="center" flexDirection="column" color="mainFont">
-        <Text textAlign="center" fontSize="90px" fontFamily="Orchidea">
+        <Text
+          textAlign="center"
+          fontSize={isMobile ? '65px' : '90px'}
+          fontFamily="Orchidea"
+        >
           ПОДАРКИ
         </Text>
         <Text
@@ -12,6 +19,7 @@ export default function Gifts() {
           color="font"
           fontSize="24px"
           fontFamily="Orchidea"
+          textAlign="center"
         >
           Дорогие наши гости! Мы с огромной радостью приглашаем вас на нашу
           свадьбу и очень ценим ваше присутствие. Однако, мы хотели бы попросить

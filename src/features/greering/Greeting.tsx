@@ -1,3 +1,4 @@
+import useDeviceDetect from '@/hooks/useDeviceDetect'
 import { Box, Button, ButtonGroup, Flex, Heading, Text } from '@chakra-ui/react'
 import { Divider } from '@chakra-ui/react'
 import Image from 'next/image'
@@ -5,12 +6,13 @@ import Link from 'next/link'
 import weddingLogo from './../../../public/weddingLogo.png'
 
 export default function Greeting() {
+  const { isMobile } = useDeviceDetect()
+
   return (
     <Box position="relative">
       <Box height="40vh">
         <Box position="absolute" bottom="10%" left="0" right="0">
           <Flex alignItems="center" flexDirection="column" textAlign="center">
-            <Image src={weddingLogo} width={80} height={80} alt="weddingLogo" />
             <Text color={'mainFont'} fontSize="40px" paddingBottom="40px">
               The Wedding of
             </Text>
@@ -31,13 +33,13 @@ export default function Greeting() {
                 </Text>
               </Box>
               <Flex flexDirection="column" textAlign="center">
-                <Text color={'mainFont'} fontSize={'3xl'}>
+                <Text color={'font'} fontSize={'3xl'}>
                   August
                 </Text>
-                <Text color={'mainFont'} fontSize={'3xl'}>
+                <Text color={'font'} fontSize={'3xl'}>
                   11
                 </Text>
-                <Text color={'mainFont'} fontSize={'3xl'}>
+                <Text color={'font'} fontSize={'3xl'}>
                   2023
                 </Text>
               </Flex>
@@ -47,6 +49,7 @@ export default function Greeting() {
                   borderBottom="2px solid"
                   width="200px"
                   fontSize={'3xl'}
+                  paddingRight={isMobile ? '22px' : 0}
                 >
                   AT 16:30
                 </Text>

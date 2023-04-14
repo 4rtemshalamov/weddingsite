@@ -6,7 +6,7 @@ const theme = extendTheme({
     body: `'CatchyMager', sans-serif`,
   },
   colors: {
-    main: '#FFFAF0',
+    main: '#FFFFFF',
     mainFont: '#957e6c',
     font: '#545F55',
   },

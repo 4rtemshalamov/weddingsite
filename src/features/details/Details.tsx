@@ -1,11 +1,18 @@
+import useDeviceDetect from '@/hooks/useDeviceDetect'
 import { Flex, Text, Box, WrapItem, Avatar } from '@chakra-ui/react'
 import Link from 'next/link'
 
 export default function Details() {
+  const { isMobile } = useDeviceDetect()
+
   return (
-    <Box background="main">
+    <Box background="main" marginTop="50px">
       <Flex alignItems="center" flexDirection="column" color="mainFont">
-        <Text textAlign="center" fontSize="90px" fontFamily="Orchidea">
+        <Text
+          textAlign="center"
+          fontSize={isMobile ? '65px' : '90px'}
+          fontFamily="Orchidea"
+        >
           ДЕТАЛИ
         </Text>
         <Text
@@ -13,6 +20,7 @@ export default function Details() {
           color="font"
           fontSize="24px"
           fontFamily="Orchidea"
+          textAlign="center"
         >
           На все вопросы, связанные с торжеством, с радостью ответит организатор
           нашей свадьбы - Юлия.

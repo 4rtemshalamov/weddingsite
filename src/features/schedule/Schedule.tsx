@@ -3,23 +3,29 @@ import { ClockCircleOutlined } from '@ant-design/icons'
 import styled from '@emotion/styled'
 import { Timeline } from 'antd'
 import Link from 'next/link'
+import useDeviceDetect from '@/hooks/useDeviceDetect'
 
 const StyledTimeline = styled(Timeline)`
+  .ant-timeline-item-content {
+    height: 70px;
+    inset-block-start: -13px;
+  }
+
   .timeline_container .ant-timeline-item-tail,
   .ant-timeline-item-head {
-    width: 25px;
-    height: 25px;
-    /* padding-block: 0px; */
+    width: 20px;
+    height: 20px;
     background: #fffaf0;
   }
 `
 
 export default function Schedule() {
+  const { isMobile } = useDeviceDetect()
   return (
-    <Box background="main" height="70vh">
+    <Box background="main">
       <Text
         color="mainFont"
-        fontSize="90px"
+        fontSize={isMobile ? '65px' : '90px'}
         fontFamily="Orchidea"
         textAlign="center"
         paddingBottom="30px"
@@ -32,14 +38,16 @@ export default function Schedule() {
             mode="alternate"
             items={[
               {
-                children: 'Сбор гостей и фуршет в 16:30',
+                children: 'Сбор гостей в 16:30',
                 dot: (
                   <ClockCircleOutlined
                     style={{
-                      fontSize: '25px',
+                      fontSize: '20px',
                       background: '#957e6c',
                       color: '#957e6c',
                       borderRadius: '50%',
+                      position: 'relative',
+                      top: '-6px',
                     }}
                   />
                 ),
@@ -47,6 +55,7 @@ export default function Schedule() {
                   fontSize: '24px',
                   color: '#545F55',
                   fontFamily: 'Orchidea',
+                  paddingLeft: isMobile ? '6px' : '20px',
                 },
               },
               {
@@ -54,10 +63,12 @@ export default function Schedule() {
                 dot: (
                   <ClockCircleOutlined
                     style={{
-                      fontSize: '25px',
+                      fontSize: '20px',
                       background: '#957e6c',
                       color: '#957e6c',
                       borderRadius: '50%',
+                      position: 'relative',
+                      top: '-6px',
                     }}
                   />
                 ),
@@ -65,7 +76,7 @@ export default function Schedule() {
                   fontSize: '24px',
                   color: '#545F55',
                   fontFamily: 'Orchidea',
-                  paddingRight: '30px',
+                  paddingRight: '20px',
                 },
               },
               {
@@ -73,10 +84,12 @@ export default function Schedule() {
                 dot: (
                   <ClockCircleOutlined
                     style={{
-                      fontSize: '25px',
+                      fontSize: '20px',
                       background: '#957e6c',
                       color: '#957e6c',
                       borderRadius: '50%',
+                      position: 'relative',
+                      top: '-6px',
                     }}
                   />
                 ),
@@ -84,6 +97,7 @@ export default function Schedule() {
                   fontSize: '24px',
                   color: '#545F55',
                   fontFamily: 'Orchidea',
+                  paddingLeft: isMobile ? '6px' : '20px',
                 },
               },
               {
@@ -91,10 +105,12 @@ export default function Schedule() {
                 dot: (
                   <ClockCircleOutlined
                     style={{
-                      fontSize: '25px',
+                      fontSize: '20px',
                       background: '#957e6c',
                       color: '#957e6c',
                       borderRadius: '50%',
+                      position: 'relative',
+                      top: '-6px',
                     }}
                   />
                 ),
@@ -102,13 +118,14 @@ export default function Schedule() {
                   fontSize: '24px',
                   color: '#545F55',
                   fontFamily: 'Orchidea',
+                  paddingRight: '20px',
                 },
               },
             ]}
           />
         </Box>
       </Box>
-      <Box paddingTop="50px">
+      <Box marginTop="50px">
         <Text
           fontSize={'24px'}
           textAlign="center"

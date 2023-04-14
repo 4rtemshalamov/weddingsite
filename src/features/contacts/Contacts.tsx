@@ -1,4 +1,4 @@
-import { Avatar, Box, Input, Text, WrapItem } from '@chakra-ui/react'
+import { Avatar, Box, Text, WrapItem } from '@chakra-ui/react'
 import Link from 'next/link'
 
 export default function Contacts() {
