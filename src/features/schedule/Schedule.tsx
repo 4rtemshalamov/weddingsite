@@ -1,4 +1,4 @@
-import { Box, Button, Flex, Text } from '@chakra-ui/react'
+import { Box, Button, Flex, Text, useMediaQuery } from '@chakra-ui/react'
 import { ClockCircleOutlined } from '@ant-design/icons'
 import styled from '@emotion/styled'
 import { Timeline } from 'antd'
@@ -21,6 +21,10 @@ const StyledTimeline = styled(Timeline)`
 
 export default function Schedule() {
   const { isMobile } = useDeviceDetect()
+  const [isLargerThan375] = useMediaQuery('(max-width: 375px)', {
+    ssr: true,
+    fallback: false,
+  })
   return (
     <Box background="main">
       <Text
@@ -28,7 +32,8 @@ export default function Schedule() {
         fontSize={isMobile ? '65px' : '90px'}
         fontFamily="Orchidea"
         textAlign="center"
-        paddingBottom="30px"
+        paddingBottom="50px"
+        marginTop={isLargerThan375 ? '40px' : 0}
       >
         НАШ ДЕНЬ
       </Text>
@@ -125,12 +130,13 @@ export default function Schedule() {
           />
         </Box>
       </Box>
-      <Box marginTop="50px">
+      <Flex alignItems="center" flexDirection="column" marginTop="50px">
         <Text
           fontSize={'24px'}
-          textAlign="center"
+          textAlign="justify"
           fontFamily="Orchidea"
           color="font"
+          width={isMobile ? '330px' : '700px'}
         >
           Просим подтвердить свое присутствие на торжестве до 11 июля откликом
           на сайте
@@ -148,7 +154,7 @@ export default function Schedule() {
             <Link href="">Подтвердить</Link>
           </Button>
         </Flex>
-      </Box>
+      </Flex>
     </Box>
   )
 }

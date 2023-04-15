@@ -19,7 +19,8 @@ export default function Gifts() {
           color="font"
           fontSize="24px"
           fontFamily="Orchidea"
-          textAlign="center"
+          textAlign="justify"
+          width={isMobile ? '330px' : '700px'}
         >
           Дорогие наши гости! Мы с огромной радостью приглашаем вас на нашу
           свадьбу и очень ценим ваше присутствие. Однако, мы хотели бы попросить

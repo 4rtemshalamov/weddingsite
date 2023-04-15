@@ -1,19 +1,29 @@
 import useDeviceDetect from '@/hooks/useDeviceDetect'
 import { Box, Button, ButtonGroup, Flex, Heading, Text } from '@chakra-ui/react'
-import { Divider } from '@chakra-ui/react'
-import Image from 'next/image'
+import { useMediaQuery } from '@chakra-ui/react'
 import Link from 'next/link'
-import weddingLogo from './../../../public/weddingLogo.png'
 
 export default function Greeting() {
   const { isMobile } = useDeviceDetect()
-
+  const [isLargerThan375] = useMediaQuery('(max-width: 375px)', {
+    ssr: true,
+    fallback: false,
+  })
   return (
     <Box position="relative">
       <Box height="40vh">
-        <Box position="absolute" bottom="10%" left="0" right="0">
+        <Box
+          position="absolute"
+          bottom={isLargerThan375 ? 0 : '10%'}
+          left="0"
+          right="0"
+        >
           <Flex alignItems="center" flexDirection="column" textAlign="center">
-            <Text color={'mainFont'} fontSize="40px" paddingBottom="40px">
+            <Text
+              color={'mainFont'}
+              fontSize="40px"
+              paddingBottom={isLargerThan375 ? 0 : '40px'}
+            >
               The Wedding of
             </Text>
             <Text color={'mainFont'} fontSize="90px">

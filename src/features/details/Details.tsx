@@ -21,6 +21,7 @@ export default function Details() {
           fontSize="24px"
           fontFamily="Orchidea"
           textAlign="center"
+          width={isMobile ? '330px' : '700px'}
         >
           На все вопросы, связанные с торжеством, с радостью ответит организатор
           нашей свадьбы - Юлия.
