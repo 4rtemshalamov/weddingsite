@@ -1,6 +1,13 @@
 import useDeviceDetect from '@/hooks/useDeviceDetect'
-import { Flex, Text, Box, WrapItem, Avatar } from '@chakra-ui/react'
+import { Flex, Text, Box } from '@chakra-ui/react'
+import Image from 'next/image'
 import Link from 'next/link'
+import avatar from './../../../public/photo.jpg'
+import styled from '@emotion/styled'
+
+const ImageStyled = styled(Image)`
+  border-radius: 50%;
+`
 
 export default function Details() {
   const { isMobile } = useDeviceDetect()
@@ -26,9 +33,9 @@ export default function Details() {
           На все вопросы, связанные с торжеством, с радостью ответит организатор
           нашей свадьбы - Юлия.
         </Text>
-        <WrapItem paddingTop="30px" justifyContent="center">
-          <Avatar size="2xl" name="Юлия" src="./../../../public/photo.jpg" />
-        </WrapItem>
+        <Box paddingTop={'30px'}>
+          <ImageStyled src={avatar} alt="avatar" width="200" height="200" />
+        </Box>
         <Text
           paddingTop="24px"
           fontFamily="Orchidea"

@@ -1,7 +1,10 @@
 import useDeviceDetect from '@/hooks/useDeviceDetect'
 import { Box, Button, ButtonGroup, Flex, Heading, Text } from '@chakra-ui/react'
 import { useMediaQuery } from '@chakra-ui/react'
+import styled from '@emotion/styled'
+import Image from 'next/image'
 import Link from 'next/link'
+import we from './../../../public/we.webp'
 
 export default function Greeting() {
   const { isMobile } = useDeviceDetect()
@@ -9,9 +12,25 @@ export default function Greeting() {
     ssr: true,
     fallback: false,
   })
+
+  const StyledBox = styled(Box)`
+    width: 100%;
+    height: 900px;
+    overflow: hidden;
+  `
+
+  const StyledImage = styled(Image)`
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  `
+
   return (
     <Box position="relative">
       <Box height="40vh">
+        <StyledBox>
+          <StyledImage src={we} alt="we" />
+        </StyledBox>
         <Box
           position="absolute"
           bottom={isLargerThan375 ? 0 : '10%'}
