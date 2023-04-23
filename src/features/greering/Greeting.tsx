@@ -1,12 +1,10 @@
 import useDeviceDetect from '@/hooks/useDeviceDetect'
-import { Box, Button, ButtonGroup, Flex, Heading, Text } from '@chakra-ui/react'
-import { Divider } from '@chakra-ui/react'
-import Image from 'next/image'
+import { Box, Button, ButtonGroup, Flex, Text } from '@chakra-ui/react'
 import Link from 'next/link'
-import weddingLogo from './../../../public/weddingLogo.png'
 
 export default function Greeting() {
   const { isMobile } = useDeviceDetect()
+  console.log('heeu')
 
   return (
     <Box position="relative">
